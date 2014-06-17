@@ -4,6 +4,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{pstricks}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
 
 \usetheme{TUC2}
 \setbeamercovered{transparent}
@@ -61,10 +63,34 @@
 \begin{frame}
     \frametitle{Endliche Automaten}
 
+    $$\mathcal{F} = \{ \mathit{Loc}, \mathit{Act}_{\mathcal{F}}, \mathit{Edges}, \mathit{loc}_0 \} $$
+
     \begin{itemize}
-        \item Erlauben einfaches Modelchecking
-        \item Wie viele Zustände sind für das Szenario nötig?
+        \item $\mathit{Loc} = \{ \blacksquare, \blacktriangle, \circlearrowleft \} $
+        \item $\mathit{Act}_{\mathcal{F}} = \{ \text{drive}, \text{turn}, \text{stop} \} $
+        \item $\mathit{Edges} \subseteq \mathit{Loc} \times \mathit{Act}_{\mathcal{F}} \times \mathit{Loc} $
+        \item $\mathit{loc}_0 \in \mathit{Loc} $
     \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Endliche Automaten}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm]
+            \node[state,initial,initial text={}] (off) {$\blacksquare$};
+            \node[state,xshift=2cm] (driving) [above right of=off] {$\blacktriangle$};
+            \node[state,xshift=6cm] (turning) [below right of=off] {$\circlearrowleft$};
+
+            \path (off)     edge [bend left]  node {drive} (driving)
+                  (off)     edge              node {turn}  (turning)
+                  (turning) edge [bend left]  node {stop}  (off)
+                  (turning) edge [bend right] node {drive} (driving)
+                  (driving) edge              node {stop}  (off)
+                  (driving) edge [bend right] node {turn}  (turning);
+        \end{tikzpicture}
+    \end{figure}
+
 \end{frame}
 
 \begin{frame}
