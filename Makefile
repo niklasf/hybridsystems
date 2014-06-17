@@ -1,4 +1,4 @@
-hybridsystems.pdf: hybridsystems.tex szenario.pdf_tex safety.pdf_tex stability.pdf_tex invariant.pdf_tex
+hybridsystems.pdf: hybridsystems.tex szenario.pdf_tex safety.pdf_tex stability.pdf_tex invariant.pdf_tex flow.pdf_tex
 	pdflatex --interaction=nonstopmode hybridsystems.tex
 
 szenario.pdf_tex: szenario.svg
@@ -12,3 +12,6 @@ stability.pdf_tex: stability.svg
 
 invariant.pdf_tex: invariant.svg
 	inkscape -D -z --file=invariant.svg --export-pdf=invariant.pdf --export-latex
+
+flow.pdf_tex: flow.svg
+	inkscape -D -z --file=flow.svg --export-pdf=flow.pdf --export-latex
