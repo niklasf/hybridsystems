@@ -83,8 +83,8 @@
             \node[state,xshift=6cm] (turning) [below right of=off] {$\circlearrowleft$};
 
             \path (off)     edge [bend left]  node {drive} (driving)
-                  (off)     edge              node {turn}  (turning)
-                  (turning) edge [bend left]  node {stop}  (off)
+                  (off)     edge [bend right] node {turn}  (turning)
+                  (turning) edge              node {stop}  (off)
                   (turning) edge [bend right] node {drive} (driving)
                   (driving) edge              node {stop}  (off)
                   (driving) edge [bend right] node {turn}  (turning);
