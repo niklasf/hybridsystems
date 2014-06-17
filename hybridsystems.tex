@@ -6,6 +6,7 @@
 \usepackage{pstricks}
 \usepackage{tikz}
 \usetikzlibrary{arrows,automata}
+\usepackage{xcolor}
 
 \usetheme{TUC2}
 \setbeamercovered{transparent}
@@ -120,13 +121,15 @@
 
     \begin{itemize}
         \item $\mathit{inv}: \mathit{Loc} \rightarrow 2^\mathit{Cont}$
-    \end{itemize}
 
-    \begin{figure}
-        \centering
-        \def\svgwidth{0.5\columnwidth}
-        \input{invariant.pdf_tex}
-    \end{figure}
+            \begin{figure}
+                \centering
+                \def\svgwidth{0.3\columnwidth}
+                \input{invariant.pdf_tex}
+            \end{figure}
+
+            $\blacktriangle \mapsto \{ (x, y, \alpha) \text{ mit } (x, y) \in \textcolor{green}{\blacksquare} \}$
+    \end{itemize}
 \end{frame}
 
 \end{section}
