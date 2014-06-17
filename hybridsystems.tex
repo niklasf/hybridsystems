@@ -132,6 +132,27 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Hybride Automaten: $\mathit{flow}$}
+
+    \begin{align*}
+        \mathcal{H} = ( & \mathit{Loc}, \mathit{Act}_{\mathcal{H}}, \mathit{Edges}, \mathit{loc}_0, \\
+                        & \mathit{Cont}, \mathit{Cont}_0, \mathit{inv}, \mathbf{flow}, \mathit{guard}, \mathit{reset} )
+    \end{align*}
+
+    \begin{itemize}
+        \item $\mathit{flow}: \mathit{Loc} \times \mathit{Cont} \rightarrow (\mathbb{R}_{\ge 0} \rightarrow \mathit{Cont}) $
+            \begin{itemize}
+                \item $(\blacksquare, (x, y, \alpha)) \mapsto f_\blacksquare(t) = (x, y, \alpha)$
+                \item $(\circlearrowleft, (x, y, \alpha)) \mapsto f_\circlearrowleft(t) = (x, y, \alpha + \omega t)$
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Hybride Automaten: $\mathit{flow}$}
+\end{frame}
+
 \end{section}
 \begin{section}{Ausblick}
 
