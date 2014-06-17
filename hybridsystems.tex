@@ -97,12 +97,17 @@
 \begin{section}{Kontinuierlicher Teil der Modellierung}
 
 \begin{frame}
-    \frametitle{Hybride Automaten}
+    \frametitle{Hybride Automaten: $\mathit{Cont}$ und $\mathit{Cont}_0$}
 
     \begin{align*}
         \mathcal{H} = ( & \mathit{Loc}, \mathit{Act}_{\mathcal{H}}, \mathit{Edges}, \mathit{loc}_0, \\
-                        & \mathit{Cont}, \mathit{Cont}_0, \mathit{inv}, \mathit{flow}, \mathit{guard}, \mathit{reset} )
+                        & \mathbf{Cont}, \mathbf{Cont}_\mathbf{0}, \mathit{inv}, \mathit{flow}, \mathit{guard}, \mathit{reset} )
     \end{align*}
+
+    \begin{itemize}
+        \item $\mathit{Cont} = \{ (x, y, \alpha ) \in \mathbb{R}^3 \} $
+        \item $\mathit{Cont}_0 = \{ (x_0, y_0, \alpha_0) \} \subseteq \mathit{Cont} $
+    \end{itemize}
 \end{frame}
 
 \end{section}
